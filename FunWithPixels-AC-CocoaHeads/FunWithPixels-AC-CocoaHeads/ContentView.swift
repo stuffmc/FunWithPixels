@@ -26,8 +26,7 @@ struct ContentView: View {
     var body: some View {
         
         let tintColor = Color(uiColor: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
-        let foreGroundColor = Color(uiColor: #colorLiteral(red: 0.3176470697, green: 0.07450980693, blue: 0.02745098062, alpha: 1))
-        
+
         var theImage = helper.allImages[selIndex]
         let theWidth: CGFloat = 160
         
@@ -37,8 +36,7 @@ struct ContentView: View {
                 .font(.custom("Chalkduster", size: 24))
                 .bold()
                 .background(LinearGradient(gradient: Gradient(colors: [.white, tintColor, .white]), startPoint: .top, endPoint: .bottom))
-                .foregroundColor(foreGroundColor)
-            
+
             
             HStack{
                 VStack(alignment: .trailing, spacing:0)
@@ -80,7 +78,6 @@ struct ContentView: View {
                             .font(.custom("Chalkduster", size: 12))
                             .bold()
                             .background(LinearGradient(gradient: Gradient(colors: [.white, tintColor, .white]), startPoint: .top, endPoint: .bottom))
-                            .foregroundColor(foreGroundColor)
                     }
                         Spacer()
 
@@ -98,7 +95,6 @@ struct ContentView: View {
                         Text("<")
                             .bold()
                             .font(.system(size: 14))
-                            .foregroundColor(foreGroundColor)
 //                            .trailing
 
                     }
@@ -114,7 +110,6 @@ struct ContentView: View {
                             Text(">")
                                 .bold()
                                 .font(.system(size: 14))
-                                .foregroundColor(foreGroundColor)
 
                         }
                         .tint(tintColor)
@@ -145,7 +140,6 @@ struct ContentView: View {
              Text("↻")
                  .bold()
                  .padding(1)
-                 .foregroundColor(foreGroundColor)
          }
          .contentShape(Rectangle())
          .buttonStyle(.borderedProminent)
@@ -178,11 +172,9 @@ struct ContentView: View {
                             .frame(width: theSize, height: 50)
                             .offset(x:20,y:-70)
                         Text("\(meanChannels, specifier: "%1.0f")")
-                            .tint(foreGroundColor)
                             .fixedSize()
                             .font(.title3)
                             .offset(x:-70,y:theSize + 10)
-                            .foregroundStyle(foreGroundColor)
                             .rotationEffect(Angle(degrees: 90))
                     }
                    
@@ -195,11 +187,9 @@ struct ContentView: View {
                            .offset(x:20,y:-30)
                        
                        Text("\(meanPasses, specifier: "%1.0f")")
-                           .tint(foreGroundColor)
                            .fixedSize()
                            .font(.title3)
                            .offset(x:-30,y:theSize + 10)
-                           .foregroundStyle(foreGroundColor)
                            .rotationEffect(Angle(degrees: 90))
                    }
         
@@ -211,11 +201,9 @@ struct ContentView: View {
                            .offset(x:40,y: theOffset)
                        
                        Text("🔆")
-                           .tint(foreGroundColor)
                            .fixedSize()
                            .font(.title3)
                            .offset(x:theOffset,y:theSize + 10)
-                           .foregroundStyle(foreGroundColor)
                            .rotationEffect(Angle(degrees: 90))
                    }
                    HStack{
@@ -226,11 +214,9 @@ struct ContentView: View {
                            .offset(x:40,y: theOffset)
                        
                        Text("🗣️")
-                           .tint(foreGroundColor)
                            .fixedSize()
                            .font(.title3)
                            .offset(x: theOffset,y:theSize + 10)
-                           .foregroundStyle(foreGroundColor)
                            .rotationEffect(Angle(degrees: 90))
                    }
 
@@ -250,7 +236,6 @@ struct ContentView: View {
                     Text(exp.formatted(.number.rounded(increment: 0.1)))
                 }
                 .tint(tintColor)
-                .foregroundStyle(foreGroundColor)
 
                 Slider( value: $cont, in: 0.25...4)
                 {
@@ -261,7 +246,6 @@ struct ContentView: View {
                     Text(cont.formatted(.number.rounded(increment: 0.1)))
                 }
                 .tint(tintColor)
-                .foregroundStyle(foreGroundColor)
 
                 Slider( value: $sat, in: 0...2)
                 {
@@ -272,7 +256,6 @@ struct ContentView: View {
                     Text(sat.formatted(.number.rounded(increment: 0.1)))
                 }
                 .tint(tintColor)
-                .foregroundStyle(foreGroundColor)
 
                 Slider( value: $temp, in: -1...1)
                 {
@@ -283,7 +266,6 @@ struct ContentView: View {
                     Text(temp.formatted(.number.rounded(increment: 0.1)))
                 }
                 .tint(tintColor)
-                .foregroundStyle(foreGroundColor)
 
                 Slider( value: $tint, in: -1...1)
                 {
@@ -294,7 +276,6 @@ struct ContentView: View {
                     Text(tint.formatted(.number.rounded(increment: 0.1)))
                 }
                 .tint(tintColor)
-                .foregroundStyle(foreGroundColor)
 
                 let sliderImage = newSliderImager()
 
