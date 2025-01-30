@@ -22,10 +22,20 @@ struct ContentView: View {
     @State private var meanPasses: Float = 0.0 //passes for mean
     @State private var selIndex = 0
     @State private var helper = Helper()
-    
+
+    private let tintColor = Color(uiColor: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
+
+    private var gradient: LinearGradient {
+        LinearGradient(
+            gradient: Gradient(colors: [Color(uiColor: UIColor.systemBackground), tintColor, Color(uiColor: UIColor.systemBackground)]),
+            startPoint: .top,
+            endPoint: .bottom
+        )
+    }
+
     var body: some View {
         
-        let tintColor = Color(uiColor: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
+
 
         var theImage = helper.allImages[selIndex]
         let theWidth: CGFloat = 160
@@ -35,7 +45,7 @@ struct ContentView: View {
             Text("Fun with Pixels")
                 .font(.custom("Chalkduster", size: 24))
                 .bold()
-                .background(LinearGradient(gradient: Gradient(colors: [.white, tintColor, .white]), startPoint: .top, endPoint: .bottom))
+                .background(gradient)
 
             
             HStack{
@@ -77,7 +87,7 @@ struct ContentView: View {
                         Text("\(helper.imageName(index:selIndex))")
                             .font(.custom("Chalkduster", size: 12))
                             .bold()
-                            .background(LinearGradient(gradient: Gradient(colors: [.white, tintColor, .white]), startPoint: .top, endPoint: .bottom))
+                            .background(gradient)
                     }
                         Spacer()
 
